@@ -1,4 +1,3 @@
-
 import Icon from '../images/1.png';
 import Icon2 from '../images/8.png';
 

@@ -1,9 +1,9 @@
 const listContainer = document.querySelector('.mainlist');
 
 const populatePage = (animations) => {
-    // const animationData = animations.filter((item) => item.title.length < 20);
-    animations.forEach((animation) => {
-        // list
+  // const animationData = animations.filter((item) => item.title.length < 20);
+  animations.forEach((animation) => {
+    // list
     const oneList = document.createElement('li');
     oneList.className = 'onelist';
     listContainer.appendChild(oneList);
@@ -52,8 +52,7 @@ const populatePage = (animations) => {
     commentBox.className = 'commentBox';
     commentBox.innerHTML = 'Comments';
     oneList.appendChild(commentBox);
-
-    }) 
-}
+  });
+};
 
 export default populatePage;
