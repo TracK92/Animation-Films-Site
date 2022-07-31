@@ -12,7 +12,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Capstone Group Project',
+      title: 'My Animations',
       template: './src/index.html',
     }),
   ],
