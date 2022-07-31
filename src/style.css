@@ -24,6 +24,9 @@ head * {
     cursor: pointer;
     border: none;
   }
+  .maindiv {
+    height: 500px;
+  }
   
   .commentBox {
     padding: 0.25em 0.5em;
@@ -49,7 +52,9 @@ head * {
     display: flex;
     justify-content: space-between;
   }
-  
+  .animetitle {
+    width: 190px;
+  }
   a {
     text-decoration: none;
   }
