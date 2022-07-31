@@ -1,7 +1,8 @@
+import postLikes from './postLikes';
+
 const listContainer = document.querySelector('.mainlist');
 
 const populatePage = (animations) => {
-  // const animationData = animations.filter((item) => item.title.length < 20);
   animations.forEach((animation) => {
     // list
     const oneList = document.createElement('li');
@@ -44,6 +45,12 @@ const populatePage = (animations) => {
     heart.appendChild(para);
 
     const span = document.createElement('span');
+    span.innerText = animation.likes;
+    if (span.innerText > 0) {
+      heartIcon.style.color = 'red';
+    } else {
+      heartIcon.style.color = 'black';
+    }
     para.appendChild(span);
 
     // comment box
@@ -52,6 +59,20 @@ const populatePage = (animations) => {
     commentBox.className = 'commentBox';
     commentBox.innerHTML = 'Comments';
     oneList.appendChild(commentBox);
+
+    // update likes
+    const updateLikes = () => {
+      const currentLikes = span.innerText;
+      span.innerText = currentLikes ? Number(currentLikes) + 1 : 1;
+    };
+
+    // like event listeners
+    heart.addEventListener('click', async (e) => {
+      heartIcon.style.color = 'red';
+      const { id } = e.target;
+      updateLikes();
+      await postLikes(id);
+    });
   });
 };
 
